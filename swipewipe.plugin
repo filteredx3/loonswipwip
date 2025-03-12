@@ -1,0 +1,8 @@
+#!name=iTunes Lookup Mock
+#!desc=Mock response for iTunes lookup API for Fewer Photos app
+
+[Script]
+http-response http://itunes.apple.com/lookup?bundleId=com.aoklab.fewerphotos&country=FR script-path=iTunes Lookup Mock.js, requires-body=false, timeout=10, tag=iTunes Lookup Mock
+
+[MITM]
+hostname = itunes.apple.com
