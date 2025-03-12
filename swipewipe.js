@@ -1,8 +1,3 @@
-// Loon Script for intercepting iTunes lookup request - Revised version
-// Name: iTunes Lookup Mock Response
-
-// Script content for iTunes Lookup Mock.js
-const script = `
 // This script will intercept and modify the iTunes lookup response
 function mockResponse() {
   $done({
@@ -26,22 +21,3 @@ function mockResponse() {
 }
 
 mockResponse();
-`;
-
-// Loon configuration file contents
-const loonConfig = `
-#!name=iTunes Lookup Mock
-#!desc=Mock response for iTunes lookup API with dynamic date
-#!author=Claude
-#!homepage=https://github.com/example
-#!icon=https://raw.githubusercontent.com/example/icon.png
-
-[Script]
-# Use a more general match pattern that will catch both HTTP and HTTPS versions
-http-request ^https?://itunes\.apple\.com/lookup\?bundleId=com\.aoklab\.fewerphotos script-path=iTunes-Lookup-Mock.js, tag=iTunes Lookup Mock Request
-http-response ^https?://itunes\.apple\.com/lookup\?bundleId=com\.aoklab\.fewerphotos script-path=iTunes-Lookup-Mock.js, requires-body=true, tag=iTunes Lookup Mock Response
-
-[MITM]
-hostname = itunes.apple.com, *.itunes.apple.com
-skip-server-cert-verify = true
-`;
