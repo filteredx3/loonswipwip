@@ -2,7 +2,7 @@
 #!desc=Mock response for iTunes lookup API for Fewer Photos app
 
 [Script]
-http-response http://itunes.apple.com/lookup?bundleId=com.aoklab.fewerphotos&country=FR script-path=https://raw.githubusercontent.com/filteredx3/loonswipwip/refs/heads/main/swipewipe.js, requires-body=false, timeout=10, tag=iTunes Lookup Mock
+http-response ^https?://itunes\.apple\.com/lookup\?bundleId=com\.aoklab\.fewerphotos script-path=https://raw.githubusercontent.com/filteredx3/loonswipwip/refs/heads/main/swipewipe.js, requires-body=false, timeout=10, tag=iTunes Lookup Mock
 
 [MITM]
-hostname = itunes.apple.com
+hostname = itunes.apple.com, *.itunes.apple.com
